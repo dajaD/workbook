@@ -1,0 +1,121 @@
+<!-- Daja Dunbar -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styling</title>
+    <style>
+        body{
+            background: #f4f4f4;
+            font-family: ariel;
+            line-height: 1.5em;
+        }
+        #container{
+            border:1px #000000 solid;
+            /* padding-left:10px;
+            padding-right: 10px; */
+            padding: 0 10px 0 10px; 
+            /* this is the same thing as the two lines above */
+            /* margin-top: 30px; */
+            width: 800px;
+            margin: 30px auto;
+            overflow: hidden; 
+            /*makes sure that the paragraphs contents doesn't overflow
+            outside of the container.*/
+        }
+        #container p{
+            margin-top: 0px;
+        }
+        .emp{
+            color: red;
+            font-weight: bold;
+        }
+        .side-a{
+            float: left;
+            width:50%;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Welcome</h1>
+        <p>
+            radom words for paragraph. <span class="emp">radom words for paragraph</span> words for paragraph. radom words for paragraph.
+            radom words for paragraph.
+            radom words for paragraph.
+            radom words for paragraph.
+            <span class="emp">radom words for paragraph</span>
+            radom words for paragraph.
+
+        </p>
+    </div>
+    <div id="container">
+        <div>
+                <h1> two paragraph with different headings Samebox</h1>
+                <p >
+                    radom words for paragraph. <span class="emp">radom words for paragraph</span> words for paragraph. radom words
+                    for paragraph.
+                    radom words for paragraph.
+                    radom words for paragraph.
+                    radom words for paragraph.
+                    <span class="emp">radom words for paragraph</span>
+                    radom words for paragraph. for paragraph.
+                    radom words for paragraph.
+                    radom words for paragraph.
+                    radom words for paragraph.
+                    <span class="emp">radom words for paragraph</span>
+                    radom words for paragraph.
+            
+                </p>
+          <div>
+                <h1>Welcome</h1>
+                <p>
+                    radom words for paragraph. <span class="emp">radom words for
+                     paragraph</span> words for paragraph. radom words for paragraph.
+                    radom words for paragraph.
+                    radom words for paragraph.
+                    radom words for paragraph.
+                    <span class="emp">radom words for paragraph</span>
+                    radom words for paragraph.
+
+                </p>
+          </div>
+        </div>
+    </div>
+    <div id="container">
+        <div class="side-a">
+            <h1 padding>two paragraph with diff headings Side by Side</h1>
+            <p>
+                radom words for paragraph. <span class="emp">radom words for paragraph</span> words for paragraph. radom words
+                for paragraph.
+                radom words for paragraph.
+                radom words for paragraph.
+                radom words for paragraph.
+                <span class="emp">radom words for paragraph</span>
+                radom words for paragraph. for paragraph.
+                radom words for paragraph.
+                radom words for paragraph.
+                radom words for paragraph.
+                <span class="emp">radom words for paragraph</span>
+                radom words for paragraph.
+        
+            </p>
+        </div>
+
+        <div class="side-b">
+            <h1>Side by Side</h1>
+            <p>
+                radom words for paragraph. <span class="emp">radom words for paragraph</span> words for paragraph. radom words
+                for paragraph.
+                radom words for paragraph.
+                radom words for paragraph.
+                radom words for paragraph.
+                <span class="emp">radom words for paragraph</span>
+                radom words for paragraph.
+            </p>
+        </div>
+    </div>
+</body>
+</html>
