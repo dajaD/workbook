@@ -1,0 +1,85 @@
+/* styling for the menu and index page. Daja Dunbar */
+body{
+    background:rgb(10, 53, 6);
+    color: #fff;
+    font-family: Arial;
+    line-height:1.4em;
+}
+
+a{
+    /* padding: 0; */
+    color:#fff;
+    text-decoration: none;
+}
+ul{
+    padding:0;
+}
+
+.clr{
+    clear: both;
+}
+#container{
+    background: rgb(11, 36, 1);
+    width: 960px;
+    margin: 30px auto;
+    overflow:hidden;
+    padding:10px;
+}
+/* the actual menu */
+#nav{
+    height:40px;
+    background:rgb(10, 53, 6);
+}
+
+#nav ul{
+    padding-top:13px;
+    padding-left: 10px;
+}
+
+#nav li{
+    list-style: none;
+    float:left;
+    padding-right:20px;
+}
+
+#nav .active{
+    font-weight: bold;
+    color: rgb(61, 134, 1);
+}
+
+#main{
+    float:left;
+    width: 60%;
+}
+
+#sidebar{
+    float:right;
+    width: 30%;
+    background: rgb(10, 53, 6);
+    margin-top: 20px;
+    padding:10px;
+}
+
+#footer{
+    text-align: center;
+    padding: 10px;
+    background: rgb(10, 53, 6);
+    margin-top: 30px;
+}
+/* services page css */
+.services a{
+    /* background: rgb(10, 53, 6); */
+    padding: 10px;
+}
+
+.services li{
+    border-bottom: 2px dashed;
+    padding-bottom: 20px;
+
+}
+/* form for the contact page */
+input, textarea{
+    width:100%;
+    padding:5px;
+    margin-bottom: 15px;
+}
