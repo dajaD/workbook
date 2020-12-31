@@ -1,55 +1,91 @@
+simple wabpage using HTML5 Daja D.
+
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Home| Simple HTML template</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        <div id="container">
-            <div id="header">
-                <h1>Simple HTML Template</h1>
-            </div>
+<html>
+<head>
+    <title>New Element & Tags</title>
+    <style>
+        body{
+                background:rgb(10, 53, 6);
+                color: #fff;
+                font-family: Arial;
+                line-height:1.4em;
+        }
 
-            <div id="nav">
-                <ul>
-                    <li><a class ="active" href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </div>
-            
-            <div id="main">
-                <h1>Welcome</h1>
-                <p>If you're looking for random paragraphs, you've come to the right place. When a random word or a random sentence
-                    isn't
-                    quite enough, the next logical step is to find a random paragraph. We created the Random Paragraph Generator
-                    with you in
-                    mind. The process is quite simple. Choose the number of random paragraphs you'd like to see and click the
-                    button. Your
-                    chosen number of paragraphs will instantly appear.
-            
-                    While it may not be obvious to everyone, there are a number of reasons creating random paragraphs can be useful.
-                    A few
-                    examples of how some people use this generator are listed in the following paragraphs.</p>
+        a{
+            /* padding: 0; */
+            color:#fff;
+            text-decoration: none;
+        }
+        ul{
+            padding:0;
+        }
+        .clr{
+            clear: both;
+        }
 
-                    <p>If you're looking for random paragraphs, you've come to the right place. When a random word or a random sentence
-                        isn't
-                        quite enough, the next logical step is to find a random paragraph. We created the Random Paragraph Generator
-                        with you in
-                        mind. The process is quite simple. Choose the number of random paragraphs you'd like to see and click the
-                        button. Your
-                        chosen number of paragraphs will instantly appear.
-                    
-                        While it may not be obvious to everyone, there are a number of reasons creating random paragraphs can be useful.
-                        A few
-                        examples of how some people use this generator are listed in the following paragraphs.</p>
-            </div>
+        #container{
+            background: rgb(11, 36, 1);
+            width: 960px;
+            margin: 30px auto;
+            overflow:hidden;
+            padding:10px;
+        }
 
-            <div id="sidebar">
-                <h3>Sidebar</h3>
+        nav{
+            height:40px;
+            background:rgb(10, 53, 6);
+        }
+
+        nav ul{
+            padding-top:13px;
+            padding-left: 10px;
+        }
+
+        nav li{
+            list-style: none;
+            float:left;
+            padding-right:20px;
+        }
+
+         main{
+            float: left;
+            width: 60%;
+        }
+
+        aside{
+            float: right;
+            width: 30%;
+            background: rgb(10, 53, 6);
+            margin-top: 20px;
+            padding: 10px;
+        }
+        footer{
+            text-align: center;
+            padding: 10px;
+            background: rgb(10, 53, 6);;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <header>
+            <h1>My Webpage</h1>
+        </header>
+
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <article>
+                <h3>Some Article</h3>
                 <p>If you're looking for random paragraphs, you've come to the right place. When a random word or a random sentence
                     isn't
                     quite enough, the next logical step is to find a random paragraph. We created the Random Paragraph Generator
@@ -61,16 +97,35 @@
                     While it may not be obvious to everyone, there are a number of reasons creating random paragraphs can be useful.
                     A few
                     examples of how some people use this generator are listed in the following paragraphs.</p>
-            </div>
-
-            <div class="clr"></div>
+            </article>
+            <article>
+                <h3>Some Article</h3>
+                <p>If you're looking for random paragraphs, you've come to the right place. When a random word or a random sentence
+                    isn't
+                    quite enough, the next logical step is to find a random paragraph. We created the Random Paragraph Generator
+                    with you in
+                    mind. The process is quite simple. Choose the number of random paragraphs you'd like to see and click the
+                    button. Your
+                    chosen number of paragraphs will instantly appear.
             
-            <div id="footer">
-                <p>Copyright &copy; 2016</p>
-            </div>
-        </div>
+                    While it may not be obvious to everyone, there are a number of reasons creating random paragraphs can be useful.
+                    A few
+                    examples of how some people use this generator are listed in the following paragraphs.</p>
+            </article>
+        </main>
+        <aside>
+            <h3>Sidebar</h3>
+            <p>If you're looking for random paragraphs, you've come to the right place. When a random word or a random sentence
+            isn't
+            quite enough, the next logical step is to find a random paragraph. We created the Random Paragraph Generator
+            with you in
+            mind.</p>
+        </aside>
+        <div class="clr"></div>
 
-        <!-- menu for the webpage -->
-        
-    </body>
+        <footer>
+            <p>Copyright &copy; 2017</p>
+        </footer>
+    </div>
+</body>
 </html>
