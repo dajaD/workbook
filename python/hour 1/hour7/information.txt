@@ -1,0 +1,25 @@
+dictionaries:
+    {key: value} ------> 
+    ex: {"bug": "an error in a program that precents the program from running as expected"}
+    ^^ dictionary using python. if want multiple definitions would seperate using comma
+    ^^fomation of dictionary is ideal 
+    accessed by keys
+
+nesting lists and dictionaries:
+    can use lists and dictionares as a value
+    {
+        key: [list],
+        key: {dictionary},
+    }
+    ^^list and dictionary being used as values in a dictionary 
+nested dictionary in a list
+    [{
+        keya : [list],
+        key2a : {dict},
+    },
+    {
+        keyb : value,
+        key2b : value,
+    }]
+
+list are accessed by indexes ---> keya & key2a are both at index 0, keyb & key2b are at index 1

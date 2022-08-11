@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Container from "react-bootstrap/Container";
 import { OrderDetailsProvider } from "./contexts/OrderDetails";
-// import OrderConfirmation from "./pages/confirmation/OrderConfirmation";
+import OrderConfirmation from "./pages/confirmation/OrderConfirmation";
 import OrderEntry from "./pages/entry/OrderEntry";
 import OrderSummary from "./pages/summary/OrderSummary";
 
@@ -15,9 +15,12 @@ import OrderSummary from "./pages/summary/OrderSummary";
   /** confirmation page does not need provider */
 }
 export default function App() {
-  // orderPhase needs to be 'inProgress', 'review' or 'completed'
+  // orderPhase expects to be 'inProgress', 'review', or 'completed'
+  //initail state is inprogress
   const [orderPhase, setOrderPhase] = useState("inProgress");
 
+  // compondent ----> store which top level page will be displayed
+  //changes based on value of order phase
   let Component = OrderEntry; // default to order page
   switch (orderPhase) {
     case "inProgress":
@@ -26,9 +29,9 @@ export default function App() {
     case "review":
       Component = OrderSummary;
       break;
-    // case "completed":
-    //   Component = OrderConfirmation;
-    //   break;
+    case "completed":
+      Component = OrderConfirmation;
+      break;
     default:
   }
 

@@ -3,7 +3,8 @@ import {
   screen,
   waitFor,
 } from "../../../test-utils/testing-library-utils";
-
+// ^^ allows for the wrapper not needing to be rendered in each test
+import userEvent from "@testing-library/user-event";
 import Options from "../Options";
 import { OrderDetailProvider } from "../../../contexts/OrderDetails";
 
@@ -51,4 +52,24 @@ test("display image for each topping option from server", async () => {
     "M&Ms topping",
     "Hot fudge topping",
   ]);
+});
+
+test("checking to make sure the total does not update if the scoops input is invalid ", async () => {
+  render(<Options optionType={"scoops"} />);
+  //optionTypes only has one prop (scoops)
+
+  //checks for chocolate spin button, and adds an invalid value
+  const chocolateInput = await screen.findByRole("spinbutton", {
+    name: "Chocolate",
+  });
+  await userEvent.clear(chocolateInput);
+  await userEvent.type(chocolateInput, "-2");
+  //checks to make sure the value was actually added
+  expect(chocolateInput).toHaveValue(-2);
+
+  //checking to make sure that the subtotal was not updated
+  //will not work if the react code is not updated.
+  const scoopSubtotal = screen.getByText("Scoops total: $0.00");
+  expect(scoopSubtotal).toBeInTheDocument();
+  screen.debug();
 });

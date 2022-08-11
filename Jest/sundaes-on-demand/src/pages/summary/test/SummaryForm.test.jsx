@@ -1,9 +1,8 @@
 import {
   render,
   screen,
-  waitFor,
   waitForElementToBeRemoved,
-} from "../../../test-utils/testing-library-utils";
+} from "@testing-library/react";
 import SummaryForm from "../SummaryForm";
 import userEvent from "@testing-library/user-event";
 

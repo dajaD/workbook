@@ -2,22 +2,6 @@ import { createContext, useContext, useState, useMemo, useEffect } from "react";
 import { pricePerItem } from "../constants";
 import { formatCurrency } from "../utilities";
 
-// //function that will format the currency to solve the error:  FAIL  src/pages/entry/tests/totalUpdates.test.jsx
-// //  × update scoop subtotal when scoops change (69 ms)
-// //  ● update scoop subtotal when scoops change
-// // TestingLibraryElementError: Unable to find an element with the text: Scoops total: $.
-// //This could be because the text is broken up by multiple elements. In this case, you can provide a
-// //function for your text matcher to make your matcher more flexible.
-// function formatCurrency(amount) {
-//   //intl: international number format -> javascript builtin function
-
-//   return new Intl.NumberFormat("en-US", {
-//     style: "currency",
-//     currency: "USD",
-//     minimumFractionDigits: 2,
-//   }).format(amount);
-// }
-
 //@ts-ignore
 const OrderDetails = createContext();
 
@@ -31,7 +15,6 @@ export function useOrderDetails() {
       "useOrderDetails must be used within an OrderDetailsProvider"
     );
   }
-
   return context;
 }
 
@@ -55,8 +38,8 @@ function calculateSubtotal(optionType, optionCounts) {
   return optionCount * pricePerItem[optionType];
 }
 
-//functional component and it will be returing the provider from the context from orderDetails
-//exporting to be accessible
+//functional component and it will be returning the provider from the context from orderDetails
+//exporting to be accessible outside of this file
 export function OrderDetailsProvider(props) {
   //internal state for provider
   //useStstae going to be an objext, default state and will have key of scoops and key of toppings
@@ -108,6 +91,15 @@ export function OrderDetailsProvider(props) {
       //set the state to have the new information from optionCount
       setOptionCounts(newOptionCounts);
     }
+
+    //will reset the order, sets the scoops and toppings to empty map.
+    function resetOrder() {
+      setOptionCounts({
+        scoops: new Map(),
+        toppings: new Map(),
+      });
+    }
+
     //getter: object containing otpions counts for scoops and toppings, subtotals and totals
     //setter: updateOptionCount => calculate the subtotal and totals whenever the option count changes
     //can get optionCounts for scoops and toppings by spreading
@@ -116,12 +108,11 @@ export function OrderDetailsProvider(props) {
     //updateItemCount is an item being returned so that the component can use this to interact with
     //with the embedded state in the context
     //returns total so that we can access and display them in appropiate components
-    return [{ ...optionCounts, totals }, updateItemCount];
+
+    //exporting a three item array with the options and totals, the item counts, and the option to reset the order
+    return [{ ...optionCounts, totals }, updateItemCount, resetOrder];
     //^^ makes new object with scoops and the value of scoops for optioncounts and toppings
     //^^ and the value of toppings for option counts
   }, [optionCounts, totals]);
   return <OrderDetails.Provider value={value} {...props} />;
 }
-
-//exporting orderdetailprovider and useorderdetails
-// export { OrderDetailsProvider, useOrderDetails };

@@ -7,6 +7,7 @@ import AlertBanner from "../common/AlertBanner";
 import { pricePerItem } from "../../constants";
 import { useOrderDetails } from "../../contexts/OrderDetails";
 import { formatCurrency } from "../../utilities";
+import { act } from "react-dom/test-utils";
 
 // optionType is a dependency array
 //this is going to run once on component mount and then it will run again if
@@ -25,14 +26,14 @@ export default function Options({ optionType }) {
 
   //optionType is 'scoops' or 'toppings'
   //if the option type prop ever changes, want to rerun this axios call
-  useEffect(() => {
-    axios
-      .get(`http://localhost:3030/${optionType}`)
-      .then((response) => setItems(response.data))
-      .catch((error) => setError(true));
-    //TODO: handle error response
-  }, [optionType]);
-
+  act(() => {
+    useEffect(() => {
+      axios
+        .get(`http://localhost:3030/${optionType}`)
+        .then((response) => setItems(response.data))
+        .catch((error) => setError(true));
+    }, [optionType]);
+  });
   //returns the alert component with the default props
   //imports alert component
   if (error) {

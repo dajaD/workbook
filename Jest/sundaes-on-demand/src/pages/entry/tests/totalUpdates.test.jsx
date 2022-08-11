@@ -1,13 +1,8 @@
-import {
-  render,
-  screen,
-  waitFor,
-} from "../../../test-utils/testing-library-utils";
+import { render, screen } from "../../../test-utils/testing-library-utils";
 // import { fireEvent } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import Options from "../Options";
 import OrderEntry from "../OrderEntry";
-import { OrderDetailsProvider } from "../../../contexts/OrderDetails";
 
 test("update scoop subtotal when scoops change", async () => {
   //need to wrap the render and give it component to solve the error:  useOrderDetails must be used within an OrderDetailsProvider
